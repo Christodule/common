@@ -1,11 +1,12 @@
-import React,{ createContext } from 'react';
-import app from 'firebase/app';
-import 'firebase/database';
-import 'firebase/auth';
-import 'firebase/storage';
-import store from './store/store';
+const React = require('react');
+const { createContext } = require('react');
+const app = require('firebase/app');
+require('firebase/database');
+require('firebase/auth');
+require('firebase/storage');
+const store = require('./store/store');
 
-import {
+const {
     fetchUser,
     mainSignUp,
     mobileSignIn,
@@ -26,111 +27,112 @@ import {
     requestEmailOtp,
     verifyEmailOtp,
     readProfile
-} from './actions/authactions';
-import {
+} = require('./actions/authactions');
+const {
     addBooking,
     clearBooking
-} from './actions/bookingactions';
-import {
+} = require('./actions/bookingactions');
+const {
     fetchBookings,
     updateBooking,
     cancelBooking,
     updateBookingImage
-} from './actions/bookinglistactions';
-import { 
+} = require('./actions/bookinglistactions');
+const {
     fetchCancelReasons,
     editCancellationReason
-} from './actions/cancelreasonactions';
-import { 
+} = require('./actions/cancelreasonactions');
+const {
     fetchCarTypes,
     editCarType
-} from './actions/cartypeactions';
-import {
+} = require('./actions/cartypeactions');
+const {
     getEstimate,
     clearEstimate
-} from './actions/estimateactions';
-import { fetchDriverEarnings } from './actions/driverearningaction';
-import { fetchEarningsReport } from './actions/earningreportsaction';
-import {
+} = require('./actions/estimateactions');
+const { fetchDriverEarnings } = require('./actions/driverearningaction');
+const { fetchEarningsReport } = require('./actions/earningreportsaction');
+const {
     fetchUserNotifications,
     fetchNotifications,
     editNotifications,
     sendNotification
-} from './actions/notificationactions';
-import {
+} = require('./actions/notificationactions');
+const {
     fetchPromos,
     editPromo
-} from './actions/promoactions';
-import {
+} = require('./actions/promoactions');
+const {
     addUser,
     fetchUsers,
     fetchUsersOnce,
     fetchDrivers,
     editUser,
     updateLicenseImage
-} from './actions/usersactions';
-import { 
+} = require('./actions/usersactions');
+const {
     fetchSettings,
     editSettings,
     clearSettingsViewError
-} from './actions/settingsactions';
-import { 
+} = require('./actions/settingsactions');
+const {
     fetchPaymentMethods,
     addToWallet,
     updateWalletBalance,
     clearMessage
-} from './actions/paymentactions';
-import {
+} = require('./actions/paymentactions');
+const {
     updateTripPickup,
     updateTripDrop,
     updateTripCar,
     updatSelPointType,
     clearTripPoints
-} from './actions/tripactions';
-import {
+} = require('./actions/tripactions');
+const {
     fetchTasks,
     acceptTask,
     cancelTask
-} from './actions/taskactions';
-import {
+} = require('./actions/taskactions');
+const {
     fetchBookingLocations,
     stopLocationFetch
-} from './actions/locationactions';
-import {
+} = require('./actions/locationactions');
+const {
     fetchChatMessages,
-    sendMessage, 
+    sendMessage,
     stopFetchMessages
-} from './actions/chatactions';
-import {
+} = require('./actions/chatactions');
+const {
     fetchWithdraws,
     completeWithdraw
-} from './actions/withdrawactions';
+} = require('./actions/withdrawactions');
 
-import {
+const {
     MinutesPassed,
     GetDateString
-} from './other/DateFunctions';
-import { 
+} = require('./other/DateFunctions');
+const {
     fetchPlacesAutocomplete,
     fetchCoordsfromPlace,
     fetchAddressfromCoords,
     getDistanceMatrix,
     getDirectionsApi
-} from './other/GoogleAPIFunctions';
-import {
+} = require('./other/GoogleAPIFunctions');
+const {
     GetDistance,
     GetTripDistance
-} from './other/GeoFunctions';
-import {
+} = require('./other/GeoFunctions');
+const {
     countries
-} from './other/GetCountries';
-import {
+} = require('./other/GetCountries');
+const {
     fetchLanguages,
     editLanguage
-} from './actions/languageactions';
-import {
+} = require('./actions/languageactions');
+const {
     RequestPushMsg
-} from './other/NotificationFunctions';
+} = require('./other/NotificationFunctions');
+
 
 const FirebaseContext = createContext(null);
 
