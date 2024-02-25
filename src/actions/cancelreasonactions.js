@@ -5,7 +5,7 @@ import {
   EDIT_CANCELLATION_REASON
 } from "../store/types";
 import { firebase } from '../config/configureFirebase';
-import {store} from '../store/store';
+import store from '../store/store';
 import { onValue, set } from "firebase/database";
 
 export const fetchCancelReasons = () => (dispatch) => {

@@ -12,7 +12,7 @@ import {
   SEND_RESET_EMAIL_FAILED
 } from "../store/types";
 
-import {store} from '../store/store';
+import store from '../store/store';
 import { firebase } from '../config/configureFirebase';
 import { onValue, update, set, off } from "firebase/database";
 import { onAuthStateChanged, signInWithCredential, signInWithPopup, signOut, sendPasswordResetEmail, signInWithEmailAndPassword } from "firebase/auth";
@@ -43,7 +43,7 @@ export const fetchUser = () => (dispatch) => {
         }else{
           let mobile = '';
           let email =  '';
-          let fullName = '';
+          let firstName = '';
           let lastName = '';
           let verifyId = '';
           let profile_image = null;
@@ -67,10 +67,10 @@ export const fetchUser = () => (dispatch) => {
               }
               if (provideData.displayName) {
                 if (provideData.displayName.split(" ").length > 0) {
-                  fullName = provideData.displayName.split(" ")[0];
+                  firstName = provideData.displayName.split(" ")[0];
                   lastName = provideData.displayName.split(" ")[1];
                 } else {
-                  fullName = provideData.displayName;
+                  firstName = provideData.displayName;
                 }
               }
               if (provideData.photoURL) {
@@ -87,7 +87,7 @@ export const fetchUser = () => (dispatch) => {
           const reference = [...Array(5)].map(_ => c[~~(Math.random()*c.length)]).join('');
           let userData = {
             createdAt: new Date().getTime(),
-            fullName: fullName,
+            firstName: firstName,
             lastName: lastName,
             mobile: mobile,
             email: email,

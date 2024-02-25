@@ -6,6 +6,7 @@ import {
   CLEAR_SETTINGS_ERROR
 } from "../store/types";
 
+import store from '../store/store';
 import { firebase } from '../config/configureFirebase';
 import { onValue, set } from "firebase/database";
 
@@ -43,6 +44,7 @@ export const editSettings = (settings) => (dispatch) => {
     payload: settings
   });
   set(settingsRef, settings);
+  alert(store.getState().languagedata.defaultLanguage.updated);
 };
 
 export const clearSettingsViewError = () => (dispatch) => {

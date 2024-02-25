@@ -9,7 +9,7 @@ import {
 } from "../store/types";
 import { RequestPushMsg } from '../other/NotificationFunctions';
 import { firebase } from '../config/configureFirebase';
-import {store} from '../store/store';
+import store from '../store/store';
 import { onValue, get, update, push } from "firebase/database";
 
 export const fetchPaymentMethods = () => (dispatch) => {

@@ -7,7 +7,7 @@ import {
 } from "../store/types";
 import { fetchBookingLocations } from '../actions/locationactions';
 import { RequestPushMsg } from '../other/NotificationFunctions';
-import {store} from '../store/store';
+import store from '../store/store';
 import { firebase } from '../config/configureFirebase';
 import { addActualsToBooking, saveAddresses, updateDriverQueue } from "../other/sharedFunctions";
 import { get, onValue, update, off, remove, push } from "firebase/database";

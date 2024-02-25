@@ -1,4 +1,4 @@
-import {store} from './store/store';
+import { store } from './store/store';
 import {
     FirebaseContext,
     FirebaseProvider
@@ -30,7 +30,6 @@ import * as NotificationFunctions from './other/NotificationFunctions';
 import * as caractions from './actions/caractions';
 import * as smtpactions from './actions/smtpactions';
 import countries from './other/GetCountries';
-
 
 const api =  {
     ...authactions,

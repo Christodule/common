@@ -10,7 +10,7 @@ import {
 import { RequestPushMsg } from '../other/NotificationFunctions';
 import { firebase } from '../config/configureFirebase';
 import { onValue, set, push, remove } from "firebase/database";
-import {store} from '../store/store';
+import store from '../store/store';
 
 export const fetchUserNotifications = () => (dispatch) => {
 

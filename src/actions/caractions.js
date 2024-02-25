@@ -4,7 +4,7 @@ import {
     FETCH_CARS_FAILED,
     EDIT_CAR
   } from "../store/types";
-  import {store} from '../store/store';
+  import store from '../store/store';
   import { firebase } from '../config/configureFirebase';
   import { onValue, update, set, child, remove, push } from "firebase/database";
   import { uploadBytesResumable, getDownloadURL } from "firebase/storage";

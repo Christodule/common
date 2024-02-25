@@ -1,5 +1,4 @@
-import { configureStore } from '@reduxjs/toolkit';
-import thunk from "redux-thunk";
+import { configureStore  } from '@reduxjs/toolkit';
 
 import { authreducer }  from "../reducers/authreducer";
 import { cartypesreducer} from "../reducers/cartypesreducer";
@@ -48,8 +47,13 @@ const rootReducer = {
   gpsdata: gpsreducer,
   languagedata: languagereducer,
   carlistdata: carlistreducer,
-  smtpdata: smtpreducer
+  smtpdata: smtpreducer,
+
 };
+
+ 
+
+
 
 export const store = configureStore({
   reducer: rootReducer

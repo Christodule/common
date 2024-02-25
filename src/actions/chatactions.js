@@ -5,7 +5,7 @@ import {
     SEND_MESSAGE,
     STOP_FETCH_MESSAGES
 } from "../store/types";
-import {store} from '../store/store';
+import store from '../store/store';
 import { firebase } from '../config/configureFirebase';
 import { RequestPushMsg } from '../other/NotificationFunctions';
 import { onValue, push, off, child } from "firebase/database";

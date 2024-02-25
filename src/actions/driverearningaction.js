@@ -3,7 +3,7 @@ import {
   FETCH_DRIVERS__EARNING_SUCCESS,
   FETCH_DRIVERS__EARNING_FAILED,
 } from "../store/types";
-import {store} from '../store/store';
+import store from '../store/store';
 import { firebase } from '../config/configureFirebase';
 import { get, onValue } from "firebase/database";
 

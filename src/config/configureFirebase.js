@@ -4,8 +4,6 @@ import { initializeApp, getApp, getApps } from "firebase/app";
 import { getDatabase, ref, query, orderByChild,equalTo } from "firebase/database";
 import { initializeAuth, getAuth, GoogleAuthProvider, OAuthProvider, signInWithPhoneNumber, PhoneAuthProvider, RecaptchaVerifier, unlink, updatePhoneNumber, linkWithPhoneNumber, browserLocalPersistence, browserPopupRedirectResolver } from "firebase/auth";
 import { getStorage, ref as stRef } from "firebase/storage";
-import { setPersistence } from 'firebase/auth';
-
 
 const FirebaseContext = createContext(null);
 
@@ -35,7 +33,6 @@ const createFullStructure = (app, db, auth, storage, config) => {
         linkWithPhoneNumber: linkWithPhoneNumber,
         mobileAuthCredential: (verificationId,code) => PhoneAuthProvider.credential(verificationId, code),           
         usersRef: ref(db, 'users'),
-        restaurantsRef: ref(db, 'restaurants'),
         bookingRef: ref(db, 'bookings'),
         cancelreasonRef: ref(db, 'cancel_reason'),
         settingsRef: ref(db, 'settings'),
@@ -50,7 +47,6 @@ const createFullStructure = (app, db, auth, storage, config) => {
         addressRef: (uid,id) =>  ref(db, "savedAddresses/"+ uid + "/" + id),
         addressEditRef:(uid) => ref(db, "savedAddresses/"+ uid),
         singleUserRef:(uid) => ref(db, "users/" + uid),
-        singleRestaurantRef:(uid) => ref(db, "restaurants/" + uid),
         profileImageRef:(uid) => stRef(storage,`users/${uid}/profileImage`),
         verifyIdImageRef:(uid) => stRef(storage,`users/${uid}/verifyIdImage`),
         bookingImageRef:(bookingId,imageType) => stRef(storage,`bookings/${bookingId}/${imageType}`),

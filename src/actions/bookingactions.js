@@ -5,7 +5,7 @@ import {
     CLEAR_BOOKING
 } from "../store/types";
 import { RequestPushMsg } from '../other/NotificationFunctions';
-import {store} from '../store/store';
+import store from '../store/store';
 import { firebase } from '../config/configureFirebase';
 import { formatBookingObject } from '../other/sharedFunctions';
 import { get, onValue, push } from "firebase/database";

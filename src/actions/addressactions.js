@@ -4,7 +4,7 @@ import {
     FETCH_ADDRESSES_FAILED,
     EDIT_ADDRESS
   } from "../store/types";
-  import {store} from '../store/store';
+  import store from '../store/store';
   import { firebase } from '../config/configureFirebase';
   import { onValue, remove, push, off } from "firebase/database";
   

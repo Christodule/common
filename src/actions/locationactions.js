@@ -4,7 +4,7 @@ import {
     FETCH_BOOKING_LOCATION_FAILED,
     STOP_LOCATION_FETCH
 } from "../store/types";
-import {store} from '../store/store';
+import store from '../store/store';
 import { firebase } from '../config/configureFirebase';
 import { query, onValue, set, off, push, limitToLast } from "firebase/database";
 
